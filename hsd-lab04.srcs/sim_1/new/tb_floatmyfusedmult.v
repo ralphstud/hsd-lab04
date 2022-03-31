@@ -28,9 +28,9 @@ module tb_floatmyfusedmult();
     floating_point_myfusedmult (
         .aclk(clk),
         .aresetn(~rst),
-        .s_axis_a_valid(1'b1),
-        .s_axis_b_valid(1'b1),
-        .s_axis_c_valid(1'b1),
+        .s_axis_a_tvalid(1'b1),
+        .s_axis_b_tvalid(1'b1),
+        .s_axis_c_tvalid(1'b1),
         .s_axis_a_tdata(ain),
         .s_axis_b_tdata(bin),
         .s_axis_c_tdata(cin),
