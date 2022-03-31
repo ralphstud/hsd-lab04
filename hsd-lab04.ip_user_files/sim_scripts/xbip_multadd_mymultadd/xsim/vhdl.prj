@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../hsd-lab04.srcs/sources_1/ip/xbip_multadd_mymultadd/sim/xbip_multadd_mymultadd.vhd" \
+
+nosort
