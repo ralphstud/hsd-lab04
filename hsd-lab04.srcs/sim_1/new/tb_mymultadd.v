@@ -19,13 +19,14 @@ module tb_mymultadd();
         ce<=0;
         subtract<=0;
         #30;
+        cin <= 0;
         ce<=1;
-        for(i=0; i<32; i=i+1) begin
-            ain = $urandom%(2**31);
-            bin = $urandom%(2**31);
-            cin = $urandom%(2**63);
-            #10;
-        end
+      for (i=0; i<32; i=i+1) begin
+        ain = $urandom%(2**4);
+        bin = $urandom%(2**4);
+        #60;
+        cin = $urandom%(2**4);
+      end
     end
     
     always #5 clk = ~clk;
