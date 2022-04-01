@@ -21,8 +21,8 @@ module tb_mymultadd();
         for(i=0; i<32; i=i+1) begin
             ain = $urandom%(2**31);
             bin = $urandom%(2**31);
-            cin = $urandom%(2**31);
-            #20;
+            cin = $urandom%(2**63);
+            #10;
         end
     end
     
@@ -31,7 +31,7 @@ module tb_mymultadd();
     xbip_multadd_mymultadd XMM (
         .clk(clk),
         .ce(ce),
-        .sclr(~sclr),
+        .sclr(sclr),
         .a(ain),
         .b(bin),
         .c(cin),
