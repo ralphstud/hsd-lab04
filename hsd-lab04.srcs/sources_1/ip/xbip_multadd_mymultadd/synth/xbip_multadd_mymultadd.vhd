@@ -109,7 +109,7 @@ ARCHITECTURE xbip_multadd_mymultadd_arch OF xbip_multadd_mymultadd IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF xbip_multadd_mymultadd_arch : ARCHITECTURE IS "xbip_multadd_mymultadd,xbip_multadd_v3_0_13,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF xbip_multadd_mymultadd_arch: ARCHITECTURE IS "xbip_multadd_mymultadd,xbip_multadd_v3_0_13,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xbip_multadd,x_ipVersion=3.0,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_VERBOSITY=0,C_XDEVICEFAMILY=zynq,C_A_WIDTH=32,C_B_WIDTH=32,C_C_WIDTH=64,C_A_TYPE=0,C_B_TYPE=0,C_C_TYPE=0,C_CE_OVERRIDES_SCLR=0,C_AB_LATENCY=-1,C_C_LATENCY=-1,C_OUT_HIGH=63,C_OUT_LOW=0,C_USE_PCIN=0,C_TEST_CORE=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF xbip_multadd_mymultadd_arch: ARCHITECTURE IS "xbip_multadd_mymultadd,xbip_multadd_v3_0_13,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xbip_multadd,x_ipVersion=3.0,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_VERBOSITY=0,C_XDEVICEFAMILY=zynq,C_A_WIDTH=32,C_B_WIDTH=32,C_C_WIDTH=64,C_A_TYPE=1,C_B_TYPE=1,C_C_TYPE=1,C_CE_OVERRIDES_SCLR=0,C_AB_LATENCY=-1,C_C_LATENCY=-1,C_OUT_HIGH=63,C_OUT_LOW=0,C_USE_PCIN=0,C_TEST_CORE=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF PCOUT: SIGNAL IS "XIL_INTERFACENAME pcout_intf, LAYERED_METADATA undef";
@@ -138,9 +138,9 @@ BEGIN
       C_A_WIDTH => 32,
       C_B_WIDTH => 32,
       C_C_WIDTH => 64,
-      C_A_TYPE => 0,
-      C_B_TYPE => 0,
-      C_C_TYPE => 0,
+      C_A_TYPE => 1,
+      C_B_TYPE => 1,
+      C_C_TYPE => 1,
       C_CE_OVERRIDES_SCLR => 0,
       C_AB_LATENCY => -1,
       C_C_LATENCY => -1,
