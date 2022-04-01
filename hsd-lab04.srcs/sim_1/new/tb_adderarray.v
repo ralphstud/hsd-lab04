@@ -3,7 +3,7 @@ module tb_adderarray();
     parameter BITWIDTH = 32;
 
     //for my IP
-    reg cmd
+    reg [2:0] cmd;
     reg [BITWIDTH-1:0] ain0;
     reg [BITWIDTH-1:0] ain1;
     reg [BITWIDTH-1:0] ain2;
@@ -16,28 +16,30 @@ module tb_adderarray();
     wire [BITWIDTH-1:0] dout1;
     wire [BITWIDTH-1:0] dout2;
     wire [BITWIDTH-1:0] dout3;
-    wire overflow;
+    wire [3:0] overflow;
 
     //for test
-    integer i;
+    integer i, j;
     //random test vector generation
     initial begin
-        for(i=0; i<32; i=i+1) begin
-            cmd = $urandom%(2**2);
-            ain0 = $urandom%(2**31);
-            ain1 = $urandom%(2**31);
-            ain2 = $urandom%(2**31);
-            ain3 = $urandom%(2**31);
-            bin0 = $urandom%(2**31);
-            bin1 = $urandom%(2**31);
-            bin2 = $urandom%(2**31);
-            bin3 = $urandom%(2**31);
-            #10;
+        for(i=0; i<5; i=i+1) begin
+            cmd = i;
+            for (j=0; j<4; j=j+1) begin
+                ain0 = $urandom%(2**31);
+                ain1 = $urandom%(2**31);
+                ain2 = $urandom%(2**31);
+                ain3 = $urandom%(2**31);
+                bin0 = $urandom%(2**31);
+                bin1 = $urandom%(2**31);
+                bin2 = $urandom%(2**31);
+                bin3 = $urandom%(2**31);
+                #20;
+            end
         end
     end
 
     //my IP
-    my_adderarray #(BITWIDTH) MY_ADDERARRAY(
+    adder_array #(BITWIDTH) MY_ADDERARRAY(
         .cmd(cmd),
         .ain0(ain0),
         .ain1(ain1),
