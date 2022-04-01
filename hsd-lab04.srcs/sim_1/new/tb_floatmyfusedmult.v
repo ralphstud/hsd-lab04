@@ -25,7 +25,7 @@ module tb_floatmyfusedmult();
     
     always #5 clk = ~clk;
     
-    floating_point_myfusedmult (
+    floating_point_myfusedmult UUT(
         .aclk(clk),
         .aresetn(~rst),
         .s_axis_a_tvalid(1'b1),
