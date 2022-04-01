@@ -1,6 +1,4 @@
-module adder_array (cmd, ain0, ain1, ain2, ai
-n3, bin0, bin1, bin2, bin3, dout0, dout1, dou
-t2, dout3, overflow);
+module adder_array (cmd, ain0, ain1, ain2, ain3, bin0, bin1, bin2, bin3, dout0, dout1, dout2, dout3, overflow);
     
     input [2:0] cmd;
     input [31:0] ain0, ain1, ain2, ain3;
@@ -18,13 +16,13 @@ t2, dout3, overflow);
         my_add ma (ain[i],bin[i],dout[i],overflow[i]);
     end endgenerate
 
-    always @
+    always @ (cmd)
         case (cmd)
-            3'b000: dout0 = dout[0], dout1 = 0, dout2 = 0, dout3 = 0, overflow[1] = 0, overflow[2] = 0, overflow[3] = 0;
-            3'b001: dout0 = 0, dout1 = dout[1], dout2 = 0, dout3 = 0, overflow[0] = 0, overflow[2] = 0, overflow[3] = 0;
-            3'b010: dout0 = 0, dout1 = 0, dout2 = dout[2], dout3 = 0, overflow[0] = 0, overflow[1] = 0, overflow[3] = 0;
-            3'b011: dout0 = 0, dout1 = 0, dout2 = 0, dout3 = dout[3], overflow[0] = 0, overflow[1] = 0, overflow[2] = 0;
-            3'b100: dout0 = dout[0], dout1 = dout[1], dout2 = dout[2], dout3 = dout[3];
+            3'b000: begin dout0 = dout[0]; dout1 = 0; dout2 = 0; dout3 = 0; overflow[1] = 0; overflow[2] = 0; overflow[3] = 0; end
+            3'b001: begin dout0 = 0; dout1 = dout[1]; dout2 = 0; dout3 = 0; overflow[0] = 0; overflow[2] = 0; overflow[3] = 0; end
+            3'b010: begin dout0 = 0; dout1 = 0; dout2 = dout[2]; dout3 = 0; overflow[0] = 0; overflow[1] = 0; overflow[3] = 0; end
+            3'b011: begin dout0 = 0; dout1 = 0; dout2 = 0; dout3 = dout[3]; overflow[0] = 0; overflow[1] = 0; overflow[2] = 0; end
+            3'b100: begin dout0 = dout[0]; dout1 = dout[1]; dout2 = dout[2]; dout3 = dout[3]; end
         endcase
 
 endmodule
