@@ -8,6 +8,7 @@ module tb_mymultadd();
     reg sclr;
     reg clk;
     reg ce;
+    reg subtract;
     wire [64-1:0] res;
     
     integer i;
@@ -16,6 +17,7 @@ module tb_mymultadd();
         clk<=0;
         sclr<=0;
         ce<=0;
+        subtract<=0;
         #30;
         ce<=1;
         for(i=0; i<32; i=i+1) begin
@@ -32,6 +34,7 @@ module tb_mymultadd();
         .clk(clk),
         .ce(ce),
         .sclr(sclr),
+        .subtract(subtract),
         .a(ain),
         .b(bin),
         .c(cin),
